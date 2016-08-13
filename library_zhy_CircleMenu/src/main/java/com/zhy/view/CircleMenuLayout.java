@@ -103,11 +103,11 @@ public class CircleMenuLayout extends ViewGroup {
     /**
      * 判断是否在收缩状态
      */
-    boolean isInShrink = false;
+    boolean isInShrink = true;
 
     private boolean isSpreading = false;
 
-    boolean isInSpread = true;
+    boolean isInSpread = false;
 
 
     private int mMenuItemLayoutId = R.layout.circle_menu_item;
@@ -155,7 +155,7 @@ public class CircleMenuLayout extends ViewGroup {
 
         setMeasuredDimension(resWidth, resHeight);
 
-        // 获得半径,如果不是正在缩小中，已缩小，正在展开状态，都重新设置
+        // 获得半径,如果不是正在缩小中，已在在缩小状态，正在展开状态，都重新设置
         if (!isShrinking && !isInShrink && !isSpreading) {
             mChlidRadio = Math.max(getMeasuredWidth(), getMeasuredHeight());
         }
