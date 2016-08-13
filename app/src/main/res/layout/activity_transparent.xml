@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 根背景 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_root_background"
+    android:descendantFocusability="afterDescendants">
+    <!-- 缓冲背景  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:id="@+id/rl_transparent_background">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@color/fenhong"
+        android:id="@+id/llv_root"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="根布局"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_root"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="0%"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_root_progressbar"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+        <SeekBar
+            android:layout_toLeftOf="@id/tv_root_progressbar"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_root"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/sb_root" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/fenhong"
+        android:id="@+id/llv_buffer"
+        android:layout_below="@id/llv_root"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="缓冲层"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_buffer"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="0%"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_buffer_progressbar"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+        <SeekBar
+            android:layout_toLeftOf="@id/tv_buffer_progressbar"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_buffer"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/sb_buffer" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/fenhong"
+        android:orientation="horizontal"
+        android:layout_below="@id/llv_buffer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="DecorView层"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_drawView"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="0%"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_drawView_progressbar"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+        <SeekBar
+            android:layout_toLeftOf="@id/tv_drawView_progressbar"
+            android:layout_toRightOf="@id/tv_drawView"
+            android:layout_centerVertical="true"
+            android:id="@+id/sb_drawView"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+    </RelativeLayout>
+</RelativeLayout>

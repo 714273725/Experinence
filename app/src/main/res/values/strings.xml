@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MyExperience</string>
+    <string-array name="function_list">
+        <item>可设置背景透明度Activity</item>
+        <item>初探依赖注入</item>
+        <item>初探RxAndroid</item>
+        <item>MVP</item>
+        <item>Annotation</item>
+        <item>线程池</item>
+        <item>功能7</item>
+        <item>功能8</item>
+        <item>功能9</item>
+        <item>功能10</item>
+        <item>功能11</item>
+        <item>功能12</item>
+        <item>功能13</item>
+        <item>功能14</item>
+        <item>功能15</item>
+        <item>功能16</item>
+        <item>功能17</item>
+        <item>功能18</item>
+        <item>功能19</item>
+        <item>功能20</item>
+        <item>功能21</item>
+        <item>功能22</item>
+        <item>功能23</item>
+        <item>功能24</item>
+        <item>功能25</item>
+        <item>功能26</item>
+        <item>功能27</item>
+        <item>功能28</item>
+        <item>功能29</item>
+        <item>功能30</item>
+        <item>功能31</item>
+        <item>功能32</item>
+        <item>功能33</item>
+        <item>功能34</item>
+        <item>功能35</item>
+        <item>功能36</item>
+        <item>功能37</item>
+        <item>功能38</item>
+        <item>功能39</item>
+    </string-array>
+</resources>
