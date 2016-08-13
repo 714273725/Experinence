@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BaseLibrary</string>
+    <string name="date_format">yyyy年MM月dd日</string>
+    <string name="date_simple">yyyy-MM-dd</string>
+    <string name="text_confirm">确定</string>
+    <string name="text_cancel">取消</string>
+    <string name="title_pick_date">选择日期</string>
+</resources>

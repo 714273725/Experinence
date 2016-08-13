@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBar">
+        <attr name="titleText" format="string"/>
+        <!-- 标题栏左:可见度 -->
+        <attr name="backVisibilty" >
+            <enum name="visible" value="0x00000000"/>
+            <enum name="invisible" value="0x00000004"/>
+            <enum name="gone" value="0x00000008"/>
+        </attr>
+        <!-- 标题栏右:可见度与图片 -->
+        <attr name="rightVisibilty">
+            <enum name="visible" value="0x00000000"/>
+            <enum name="invisible" value="0x00000004"/>
+            <enum name="gone" value="0x00000008"/>
+        </attr>
+        <attr name="rigthSrc" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="WeightYunLayout">
+        <attr name="line_counts" format="integer" />
+        <attr name="item_ignore_head_margin" format="boolean" />
+        <attr name="item_ignore_end_margin" format="boolean" />
+        <attr name="item_background" format="reference" />
+        <attr name="item_marginRight" format="integer" />
+        <attr name="item_marginLeft" format="integer" />
+        <attr name="item_marginTop" format="integer" />
+        <attr name="item_marginBottom" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+        <attr name="selectedTabTextColor" format="color" />
+    </declare-styleable>
+
+
+
+    <!--订单状态的指示器属性-->
+    <attr name="visible_tab_count" format="integer" />
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="visible_tab_count" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:calendarViewShown="false"
+        android:paddingTop="-5dp"
+        android:spinnersShown="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_date_confirm"
+            style="@style/btn_dialog"
+            android:layout_marginRight="1dp"
+            android:padding="0dp"
+            android:text="@string/text_confirm" />
+
+        <Button
+            android:id="@+id/btn_date_cancel"
+            style="@style/btn_dialog"
+            android:padding="0dp"
+            android:text="@string/text_cancel" />
+    </LinearLayout>
+
+</LinearLayout>
