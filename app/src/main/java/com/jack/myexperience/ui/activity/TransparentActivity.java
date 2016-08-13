@@ -8,8 +8,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.jack.myexperience.R;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,21 +17,21 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/2/23 0023.
  */
 public class TransparentActivity extends Activity implements SeekBar.OnSeekBarChangeListener,View.OnClickListener{
-    @Bind(R.id.rl_root_background)
+    @BindView(R.id.rl_root_background)
     RelativeLayout mRootBackGround;
-    @Bind(R.id.rl_transparent_background)
+    @BindView(R.id.rl_transparent_background)
     RelativeLayout mBufferBackGround;
-    @Bind(R.id.tv_root_progressbar)
+    @BindView(R.id.tv_root_progressbar)
     TextView mRootProgress;
-    @Bind(R.id.tv_buffer_progressbar)
+    @BindView(R.id.tv_buffer_progressbar)
     TextView mBufferProgress;
-    @Bind(R.id.tv_drawView_progressbar)
+    @BindView(R.id.tv_drawView_progressbar)
     TextView mDrawViewProgress;
-    @Bind(R.id.sb_root)
+    @BindView(R.id.sb_root)
     SeekBar mRoot;
-    @Bind(R.id.sb_buffer)
+    @BindView(R.id.sb_buffer)
     SeekBar mBuffer;
-    @Bind(R.id.sb_drawView)
+    @BindView(R.id.sb_drawView)
     SeekBar mDrawView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

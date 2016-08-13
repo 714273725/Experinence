@@ -2,12 +2,12 @@
     <string name="app_name">MyExperience</string>
     <string-array name="function_list">
         <item>可设置背景透明度Activity</item>
-        <item>初探依赖注入</item>
-        <item>初探RxAndroid</item>
+        <item>依赖注入</item>
+        <item>RxAndroid</item>
         <item>MVP</item>
         <item>Annotation</item>
         <item>线程池</item>
-        <item>功能7</item>
+        <item>菜单</item>
         <item>功能8</item>
         <item>功能9</item>
         <item>功能10</item>

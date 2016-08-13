@@ -22,10 +22,16 @@ import com.zhy.ccbCricleMenu.R;
  * </pre>
  */
 public class CircleMenuLayout extends ViewGroup {
+    public enum State {
+        MOVING,//正在移到
+        SHRINK,//已经收缩
+        SPREAD //已经展开
+    }
+
+
     public static final int GRAVITY_BOTTOM_CENTER = 0x01;
     public static final int GRAVITY_BOTTOM_RIGHT = 0x02;
     public static final int GRAVITY_BOTTOM_LEFT = 0x03;
-
     private int mScreenHeight = 0;
     private int mScreenWidth = 0;
     private int mHalfCenter = 0;
@@ -625,6 +631,11 @@ public class CircleMenuLayout extends ViewGroup {
         return this;
     }
 
+    /**
+     * 设置菜单在屏幕上的位置，不带margin
+     *
+     * @param gravity
+     */
     public void setGravity(final int gravity) {
         post(new Runnable() {
             @Override
@@ -635,12 +646,19 @@ public class CircleMenuLayout extends ViewGroup {
                 if (mHalfCenter <= 0) {
                     mHalfCenter = Math.max(getMeasuredWidth(), getMeasuredHeight()) / 12;
                 }
+                int[] wh = new int[2];
+                getThis().getLocationOnScreen(wh);
                 switch (gravity) {
                     case GRAVITY_BOTTOM_CENTER:
-                        int[] wh = new int[2];
-                        getThis().getLocationOnScreen(wh);
-                        Log.e((mScreenWidth / 2 - wh[0] - getThis().getMeasuredWidth() / 2) + "", (wh[1] + getThis().getMeasuredHeight() / 2) + "");
                         getThis().setTranslationX(mScreenWidth / 2 - wh[0] - getThis().getMeasuredWidth() / 2);
+                        getThis().setTranslationY(mScreenHeight - wh[1] - getThis().getMeasuredHeight() / 2 - mHalfCenter);
+                        break;
+                    case GRAVITY_BOTTOM_LEFT:
+                        getThis().setTranslationX(0 - wh[0] - getThis().getMeasuredWidth() / 2 + mHalfCenter);
+                        getThis().setTranslationY(mScreenHeight - wh[1] - getThis().getMeasuredHeight() / 2 - mHalfCenter);
+                        break;
+                    case GRAVITY_BOTTOM_RIGHT:
+                        getThis().setTranslationX(mScreenWidth - wh[0] - getThis().getMeasuredWidth() / 2 - mHalfCenter);
                         getThis().setTranslationY(mScreenHeight - wh[1] - getThis().getMeasuredHeight() / 2 - mHalfCenter);
                         break;
                 }
@@ -648,6 +666,12 @@ public class CircleMenuLayout extends ViewGroup {
         });
     }
 
+    /**
+     * 设置菜单在屏幕上的位置，带margin
+     *
+     * @param gravity
+     * @param margin
+     */
     public void setGravityWithMargin(final int gravity, final int margin) {
         post(new Runnable() {
             @Override
@@ -658,13 +682,20 @@ public class CircleMenuLayout extends ViewGroup {
                 if (mHalfCenter <= 0) {
                     mHalfCenter = Math.max(getMeasuredWidth(), getMeasuredHeight()) / 12;
                 }
+                int[] wh = new int[2];
+                getThis().getLocationOnScreen(wh);
                 switch (gravity) {
                     case GRAVITY_BOTTOM_CENTER:
-                        int[] wh = new int[2];
-                        getThis().getLocationOnScreen(wh);
-                        Log.e((mScreenWidth / 2 - wh[0] - getThis().getMeasuredWidth() / 2) + "", (wh[1] + getThis().getMeasuredHeight() / 2) + "");
                         getThis().setTranslationX(mScreenWidth / 2 - wh[0] - getThis().getMeasuredWidth() / 2);
                         getThis().setTranslationY(mScreenHeight - wh[1] - getThis().getMeasuredHeight() / 2 - mHalfCenter - margin);
+                        break;
+                    case GRAVITY_BOTTOM_LEFT:
+                        getThis().setTranslationX(0 - wh[0] - getThis().getMeasuredWidth() / 2 + margin + mHalfCenter);
+                        getThis().setTranslationY(mScreenHeight - wh[1] - getThis().getMeasuredHeight() / 2 - mHalfCenter);
+                        break;
+                    case GRAVITY_BOTTOM_RIGHT:
+                        getThis().setTranslationX(mScreenWidth - wh[0] - getThis().getMeasuredWidth() / 2 - margin - mHalfCenter);
+                        getThis().setTranslationY(mScreenHeight - wh[1] - getThis().getMeasuredHeight() / 2 - mHalfCenter);
                         break;
                 }
             }
@@ -674,5 +705,20 @@ public class CircleMenuLayout extends ViewGroup {
     private void getScreen() {
         mScreenHeight = getContext().getResources().getDisplayMetrics().heightPixels;
         mScreenWidth = getContext().getResources().getDisplayMetrics().widthPixels;
+    }
+
+    /**
+     * 获取当前菜单的状态
+     *
+     * @return
+     */
+    public State getState() {
+        if (isInShrink) {
+            return State.SHRINK;
+        } else if (isInSpread) {
+            return State.SPREAD;
+        } else {
+            return State.MOVING;
+        }
     }
 }

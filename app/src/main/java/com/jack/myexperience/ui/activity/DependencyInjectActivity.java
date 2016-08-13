@@ -9,8 +9,7 @@ import com.jack.myexperience.bean.KettleBean;
 import com.jack.myexperience.component.DaggerDependencyInjectComponent;
 
 import javax.inject.Inject;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -30,7 +29,7 @@ import butterknife.ButterKnife;
 public class DependencyInjectActivity extends Activity {
     @Inject
     KettleBean kettle;
-    @Bind(R.id.tv_dependency_inject)
+    @BindView(R.id.tv_dependency_inject)
     TextView mTips;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

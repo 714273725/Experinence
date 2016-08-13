@@ -8,11 +8,10 @@ import com.jack.myexperience.R;
 import com.jack.myexperience.bean.HeaterBean;
 import java.util.ArrayList;
 import java.util.List;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.Observable;
 import rx.Observer;
-import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 /**
@@ -20,7 +19,7 @@ import rx.schedulers.Schedulers;
  * Created by Administrator on 2016/2/24 0024.
  */
 public class RxAndroidActivity extends Activity {
-    @Bind(R.id.btn_activity_rx)
+    @BindView(R.id.btn_activity_rx)
     Button mBook;
     Observer<HeaterBean> mReader;
     List<HeaterBean> mList=new ArrayList<>();

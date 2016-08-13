@@ -15,8 +15,7 @@ import com.jack.myexperience.ui.adpater.ProvinceListAdapter;
 import com.jack.myexperience.viewinterface.CityListView;
 
 import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -24,9 +23,9 @@ import butterknife.ButterKnife;
  */
 public class MVPActivity extends Activity implements CityListView ,View.OnClickListener{
     CityListPresenter mPresenter;
-    @Bind(R.id.rv_province)
+    @BindView(R.id.rv_province)
     RecyclerView mShowList;
-    @Bind(R.id.btn_get_province_list)
+    @BindView(R.id.btn_get_province_list)
     Button mGetList;
     ProvinceListAdapter mProvinceListAdapter;
     CityListAdapter mCityListAdapter;

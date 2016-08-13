@@ -11,37 +11,36 @@ import android.widget.SeekBar;
 import com.jack.myexperience.MyApplication;
 import com.jack.myexperience.R;
 import com.jack.myexperience.model.CancelableTask;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2016/2/26 0026.
  */
 public class ThreadPoolActivity extends Activity implements View.OnClickListener{
-    @Bind(R.id.one)
+    @BindView(R.id.one)
     SeekBar one;
-    @Bind(R.id.two)
+    @BindView(R.id.two)
     SeekBar two;
-    @Bind(R.id.three)
+    @BindView(R.id.three)
     SeekBar three;
-    @Bind(R.id.four)
+    @BindView(R.id.four)
     SeekBar four;
-    @Bind(R.id.five)
+    @BindView(R.id.five)
     SeekBar five;
-    @Bind(R.id.six)
+    @BindView(R.id.six)
     SeekBar six;
-    @Bind(R.id.seven)
+    @BindView(R.id.seven)
     SeekBar seven;
-    @Bind(R.id.eight)
+    @BindView(R.id.eight)
     SeekBar eight;
-    @Bind(R.id.nine)
+    @BindView(R.id.nine)
     SeekBar nine;
-    @Bind(R.id.btn_cached)
+    @BindView(R.id.btn_cached)
     Button mCached;
-    @Bind(R.id.btn_fixed)
+    @BindView(R.id.btn_fixed)
     Button mFixed;
-    @Bind(R.id.btn_cancel_cached)
+    @BindView(R.id.btn_cancel_cached)
     Button mCancelCached;
     Handler mHandler;
     @Override

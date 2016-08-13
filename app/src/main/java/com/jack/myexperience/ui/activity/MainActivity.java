@@ -1,4 +1,5 @@
 package com.jack.myexperience.ui.activity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,27 +14,36 @@ import android.widget.Toast;
 import com.jack.myexperience.MyApplication;
 import com.jack.myexperience.R;
 import com.jack.myexperience.ui.adpater.FunctionAdapter;
+import com.zhy.view.CircleMenuLayout;
 
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends Activity implements View.OnClickListener{
-    @Bind(R.id.rv_function)
+public class MainActivity extends Activity implements View.OnClickListener {
+    @BindView(R.id.rv_function)
     RecyclerView mFunctionList;
-    @Bind(R.id.btn_vertical)
+    @BindView(R.id.btn_vertical)
     Button mVertical;
-    @Bind(R.id.btn_horizontal)
+    @BindView(R.id.btn_horizontal)
     Button mHorizontal;
-    @Bind(R.id.btn_grid)
+    @BindView(R.id.btn_grid)
     Button mGrid;
     FunctionAdapter mFunctionAdapter;
     RecyclerView.LayoutManager layoutManager;
+    RecyclerView.LayoutManager[] managers = new RecyclerView.LayoutManager[3];
+    int[] items = {R.mipmap.icon_8, R.mipmap.icon_24, R.mipmap.icon_27, R.mipmap.icon_33, R.mipmap.icon_22, R.mipmap.icon_21, R.mipmap.icon_16, R.mipmap.icon_40};
+    String[] texts = {"0", "1", "2", "3", "4", "5", "6", "7"};
+    @BindView(R.id.circle_menu)
+    CircleMenuLayout mCirclMenu;
+
     {
-        Toast.makeText(MyApplication.getInstance(),"匿名代码块",Toast.LENGTH_LONG).show();
+        Toast.makeText(MyApplication.getInstance(), "匿名代码块", Toast.LENGTH_LONG).show();
+
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +51,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         ButterKnife.bind(this);
         init();
     }
+
     private void init() {
         mFunctionAdapter = new FunctionAdapter();
         String[] function = getResources().getStringArray(R.array.function_list);
@@ -57,13 +68,15 @@ public class MainActivity extends Activity implements View.OnClickListener{
             public void onClick(View v) {
                 int position = (int) v.getTag();
                 v.setBackgroundColor(Color.parseColor("#CCCCFF"));
-                selectPosition(position,v);
+                selectPosition(position, v);
             }
         });
+        mCirclMenu.setMenuItemIconsAndTexts(items, texts)
+                .setGravityWithMargin(CircleMenuLayout.GRAVITY_BOTTOM_CENTER,30);
     }
 
-    private void selectPosition(int position,View v) {
-        switch (position){
+    private void selectPosition(int position, View v) {
+        switch (position) {
             case 0:
                 forward(TransparentActivity.class);
                 break;
@@ -82,6 +95,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case 5:
                 forward(ThreadPoolActivity.class);
                 break;
+            case 6:
+                forward(MenuActivity.class);
+                break;
+            case 7:
+                forward(ImageCompressActivity.class);
+                break;
             default:
                 break;
         }
@@ -90,20 +109,32 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        if(layoutManager!=null){
-            switch (v.getId()){
+        if (layoutManager != null) {
+            switch (v.getId()) {
                 case R.id.btn_vertical:
-                        layoutManager=new LinearLayoutManager(this);
-                    ((LinearLayoutManager)layoutManager).setOrientation(LinearLayoutManager.VERTICAL);
+                    if (managers[0] == null) {
+                        managers[0] = new LinearLayoutManager(this);
+                    }
+                    //layoutManager=new LinearLayoutManager(this);
+                    layoutManager = managers[0];
+                    ((LinearLayoutManager) layoutManager).setOrientation(LinearLayoutManager.VERTICAL);
                     mFunctionList.setLayoutManager(layoutManager);
                     break;
                 case R.id.btn_horizontal:
-                        layoutManager=new LinearLayoutManager(this);
-                    ((LinearLayoutManager)layoutManager).setOrientation(LinearLayoutManager.HORIZONTAL);
+                    if (managers[1] == null) {
+                        managers[1] = new LinearLayoutManager(this);
+                    }
+                    //layoutManager=new LinearLayoutManager(this);
+                    layoutManager = managers[1];
+                    ((LinearLayoutManager) layoutManager).setOrientation(LinearLayoutManager.HORIZONTAL);
                     mFunctionList.setLayoutManager(layoutManager);
                     break;
                 case R.id.btn_grid:
-                    layoutManager=new GridLayoutManager(this,3);
+                    if (managers[2] == null) {
+                        managers[2] = new GridLayoutManager(this, 3);
+                    }
+                    layoutManager = managers[2];
+                    //layoutManager=new GridLayoutManager(this,3);
                     mFunctionList.setLayoutManager(layoutManager);
                     break;
                 default:
@@ -111,9 +142,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
             }
         }
     }
-    public void forward(Class<? extends Activity> clz){
-        if(null!=clz){
-            Intent intent = new Intent(this,clz);
+
+    public void forward(Class<? extends Activity> clz) {
+        if (null != clz) {
+            Intent intent = new Intent(this, clz);
             startActivity(intent);
         }
     }

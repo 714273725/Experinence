@@ -3,6 +3,8 @@
     package="com.jack.myexperience" >
     <!--android:theme="@android:style/Theme.Translucent"-->
     <!---->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -24,6 +26,8 @@
         <activity android:name=".ui.activity.MVPActivity"/>
         <activity android:name=".ui.activity.AnnotationActivity"/>
         <activity android:name=".ui.activity.ThreadPoolActivity"/>
+        <activity android:name=".ui.activity.MenuActivity"/>
+        <activity android:name=".ui.activity.ImageCompressActivity"/>
     </application>
 
 </manifest>
