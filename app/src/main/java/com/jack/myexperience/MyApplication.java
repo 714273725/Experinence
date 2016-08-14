@@ -11,6 +11,8 @@ import com.jack.myexperience.model.MyThreadPool;
 import java.util.LinkedList;
 import java.util.List;
 
+import ye.jian.ge.BaseContext;
+
 /**
  * Created by Administrator on 2016/2/23 0023.
  */
@@ -50,6 +52,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         myApplication=this;
+        BaseContext.initialize(this);
     }
     public static Activity getTargetActivity(Class<? extends Activity> target){
         Activity targetActivity=null;

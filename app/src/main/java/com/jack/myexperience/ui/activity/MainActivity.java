@@ -40,7 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     CircleMenuLayout mCirclMenu;
 
     {
-        Toast.makeText(MyApplication.getInstance(), "匿名代码块", Toast.LENGTH_LONG).show();
+        Toast.makeText(MyApplication.getInstance(), "匿名代码块-登录成功", Toast.LENGTH_LONG).show();
 
     }
 
