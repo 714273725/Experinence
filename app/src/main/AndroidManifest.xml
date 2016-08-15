@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jack.myexperience" >
+    package="com.jack.myexperience">
     <!--android:theme="@android:style/Theme.Translucent"-->
     <!---->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".ui.activity.WelComeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.activity.TransparentActivity"
-            android:theme="@style/mmm"/>
-        <activity android:name=".ui.activity.DependencyInjectActivity"/>
-        <activity android:name=".ui.activity.RxAndroidActivity"/>
-        <activity android:name=".ui.activity.MVPActivity"/>
-        <activity android:name=".ui.activity.AnnotationActivity"/>
-        <activity android:name=".ui.activity.ThreadPoolActivity"/>
-        <activity android:name=".ui.activity.MenuActivity"/>
-        <activity android:name=".ui.activity.ImageCompressActivity"/>
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
+        <activity
+            android:name=".ui.activity.TransparentActivity"
+            android:theme="@style/mmm" />
+        <activity android:name=".ui.activity.DependencyInjectActivity" />
+        <activity android:name=".ui.activity.RxAndroidActivity" />
+        <activity android:name=".ui.activity.MVPActivity" />
+        <activity android:name=".ui.activity.AnnotationActivity" />
+        <activity android:name=".ui.activity.ThreadPoolActivity" />
+        <activity android:name=".ui.activity.MenuActivity" />
+        <activity android:name=".ui.activity.ImageCompressActivity" />
     </application>
 
 </manifest>
