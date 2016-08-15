@@ -344,7 +344,10 @@ public class CircleMenuLayout extends ViewGroup {
                 mLastY = y;
                 mDownTime = System.currentTimeMillis();
                 mTmpAngle = 0;
-
+                if(isFling){
+                    removeCallbacks(mFlingRunnable);
+                    isFling = false;
+                }
                 /*// 如果当前已经在快速滚动
                 if (isFling) {
                     // 移除快速滚动的回调

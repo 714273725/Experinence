@@ -14,14 +14,14 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/8/13.
  */
 public class MenuActivity extends BaseActivity {
-   /* int[] items = {R.mipmap.icon_8, R.mipmap.icon_24, R.mipmap.icon_27, R.mipmap.icon_33, R.mipmap.icon_22, R.mipmap.icon_21, R.mipmap.icon_16, R.mipmap.icon_40};
+    int[] items = {R.mipmap.icon_8, R.mipmap.icon_24, R.mipmap.icon_27, R.mipmap.icon_33, R.mipmap.icon_22, R.mipmap.icon_21, R.mipmap.icon_16, R.mipmap.icon_40};
     String[] texts = {"0", "1", "2", "3", "4", "5", "6", "7"};
     @BindView(R.id.circle_menu)
-    CircleMenuLayout mCirclMenu;*/
+    CircleMenuLayout mCirclMenu;
 
     @Override
     public void initCreate(Bundle savedInstanceState) {
-       /* setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menu);
         ButterKnife.bind(this);
         mCirclMenu.setMenuItemIconsAndTexts(items, texts)
                 .setGravity(CircleMenuLayout.GRAVITY_BOTTOM_LEFT);
@@ -44,6 +44,6 @@ public class MenuActivity extends BaseActivity {
             public void itemCenterClick(View view) {
 
             }
-        });*/
+        });
     }
 }
