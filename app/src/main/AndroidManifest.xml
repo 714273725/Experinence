@@ -33,6 +33,7 @@
         <activity android:name=".ui.activity.MenuActivity" />
         <activity android:name=".ui.activity.ImageCompressActivity" />
         <activity android:name=".ui.activity.SnackbarActivity"/>
+        <activity android:name=".ui.activity.AnimationActivity"/>
     </application>
 
 </manifest>

@@ -97,6 +97,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case 9:
                 forward(SnackbarActivity.class);
                 break;
+            case 10:
+                forward(AnimationActivity.class);
+                break;
             default:
                 break;
         }

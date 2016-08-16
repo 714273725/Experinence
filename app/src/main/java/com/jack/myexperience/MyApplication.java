@@ -6,6 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jack.myexperience.model.MyThreadPool;
 
 import java.util.LinkedList;
@@ -53,6 +54,7 @@ public class MyApplication extends Application {
         super.onCreate();
         myApplication=this;
         BaseContext.initialize(this);
+        Fresco.initialize(this);
     }
     public static Activity getTargetActivity(Class<? extends Activity> target){
         Activity targetActivity=null;
