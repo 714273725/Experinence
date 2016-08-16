@@ -32,6 +32,7 @@
         <activity android:name=".ui.activity.ThreadPoolActivity" />
         <activity android:name=".ui.activity.MenuActivity" />
         <activity android:name=".ui.activity.ImageCompressActivity" />
+        <activity android:name=".ui.activity.SnackbarActivity"/>
     </application>
 
 </manifest>

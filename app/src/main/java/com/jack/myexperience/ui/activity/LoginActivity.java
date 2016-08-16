@@ -18,7 +18,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import ye.jian.ge.utils.LogUtils;
 import ye.jian.ge.utils.ToastUtils;
 
 /**
@@ -45,6 +44,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             case R.id.btn_login:
                 //login();
                 forward(MainActivity.class);
+                finish();
                 break;
         }
     }
@@ -79,6 +79,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         switch (result) {
                             case 1:
                                 forward(MainActivity.class);
+                                finish();
                                 break;
                             default:
                                 break;

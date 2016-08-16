@@ -24,6 +24,7 @@ public class WelComeActivity extends BaseActivity {
             @Override
             public void run() {
                 forward(LoginActivity.class);
+                finish();
             }
         }, 1000);
     }

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="2dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--上部栏-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--详细信息栏-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--上部栏-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:orientation="horizontal">
+                    <!--姓名-->
+                    <TextView
+                        android:id="@+id/tv_item_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="bottom|left"
+                        android:maxEms="5"
+                        android:minWidth="50dp"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text="name"
+                        android:textSize="15dp" />
+                    <!--头衔-->
+                    <TextView
+                        android:id="@+id/tv_item_job_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|left"
+                        android:maxEms="5"
+                        android:singleLine="true"
+                        android:text="job"
+                        android:textSize="10dp" />
+                    <!--价格-->
+                    <TextView
+                        android:id="@+id/tv_item_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="bottom|left"
+                        android:maxEms="4"
+                        android:singleLine="true"
+                        android:text="099999999999"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="bottom|left"
+                        android:maxLength="5"
+                        android:singleLine="true"
+                        android:text="元/小时"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <!--下部栏-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp">
+
+                    <TextView
+                        android:id="@+id/tv_item_home_company"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toLeftOf="@+id/ll_right"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical|right"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text="珠海市"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tv_item_profession"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:maxEms="5"
+                        android:singleLine="true"
+                        android:text="蓝色经理"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tv_item_company_character"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:maxEms="5"
+                        android:singleLine="true"
+                        android:text="民企"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!--个人介绍-->
+        <!--底部信息-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.1"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="已预约:"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_item_home_appointed_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="- -"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.1"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="可预约:"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_item_home_can_appoint_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="- -"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="招兵:"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_item_home_release_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="- -"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="评论:"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tv_item_home_comment_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="- -"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -27,8 +27,6 @@ public class CircleMenuLayout extends ViewGroup {
         SHRINK,//已经收缩
         SPREAD //已经展开
     }
-
-
     public static final int GRAVITY_BOTTOM_CENTER = 0x01;
     public static final int GRAVITY_BOTTOM_RIGHT = 0x02;
     public static final int GRAVITY_BOTTOM_LEFT = 0x03;

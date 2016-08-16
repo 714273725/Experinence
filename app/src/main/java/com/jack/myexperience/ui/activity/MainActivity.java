@@ -53,7 +53,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     private void init() {
-        mFunctionAdapter = new FunctionAdapter();
+        mFunctionAdapter = new FunctionAdapter(this);
         String[] function = getResources().getStringArray(R.array.function_list);
         List<String> data = Arrays.asList(function);
         layoutManager = new LinearLayoutManager(this);
@@ -63,16 +63,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mVertical.setOnClickListener(this);
         mHorizontal.setOnClickListener(this);
         mGrid.setOnClickListener(this);
-        mFunctionAdapter.setListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = (int) v.getTag();
-                v.setBackgroundColor(Color.parseColor("#CCCCFF"));
-                selectPosition(position, v);
-            }
-        });
+        mFunctionAdapter.setListener(view -> selectPosition((int) view.getTag(), view));
         mCirclMenu.setMenuItemIconsAndTexts(items, texts)
-                .setGravityWithMargin(CircleMenuLayout.GRAVITY_BOTTOM_CENTER,30);
+                .setGravityWithMargin(CircleMenuLayout.GRAVITY_BOTTOM_CENTER, 30);
     }
 
     private void selectPosition(int position, View v) {
@@ -101,10 +94,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case 7:
                 forward(ImageCompressActivity.class);
                 break;
+            case 9:
+                forward(SnackbarActivity.class);
+                break;
             default:
                 break;
         }
-        v.setBackgroundColor(Color.parseColor("#FFFFFF"));
     }
 
     @Override
