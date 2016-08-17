@@ -20,12 +20,10 @@ public class WelComeActivity extends BaseActivity {
     public void initCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_welcome);
         ButterKnife.bind(this);
-        mWelcome.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                forward(LoginActivity.class);
-                finish();
-            }
-        }, 1000);
+        mWelcome.postDelayed(()->{forwardLogin();}, 1000);
+    }
+    public void forwardLogin(){
+        forward(LoginActivity.class);
+        finish();
     }
 }

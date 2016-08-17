@@ -61,7 +61,7 @@ public class AnimationActivity extends BaseActivity {
 
     private void start() {
         group = new PhotoGroup(this);
-        group.start(photos);
+        group.start(photos,0);
         /*animatiom = AnimationUtils.loadAnimation(this, R.anim.scale);
         layout = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.animation_layout, null);
         ViewPager pager = (ViewPager) layout.findViewById(R.id.pager);

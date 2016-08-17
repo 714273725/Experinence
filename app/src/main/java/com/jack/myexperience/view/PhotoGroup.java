@@ -69,7 +69,7 @@ public class PhotoGroup extends RelativeLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    public void start(List<Uri> photos) {
+    public void start(List<Uri> photos,int pos) {
         this.removeAllViews();
         mPager = new ViewPager(mActivity);
         this.addView(mPager);
@@ -93,6 +93,7 @@ public class PhotoGroup extends RelativeLayout {
 
             }
         });
+        mPager.setCurrentItem(pos);
         mTotalNum.setText(String.valueOf(photos.size()));
         mActivity.getWindow().addContentView(this, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         mPager.setAnimation(animatiom);
@@ -111,7 +112,7 @@ public class PhotoGroup extends RelativeLayout {
             mActivity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
             narrow = AnimationUtils.loadAnimation(mActivity, R.anim.narrow);
             this.setAnimation(narrow);
-            this.removeAllViews();
+            //this.removeAllViews();
             ((ViewGroup)this.getParent()).removeView(this);
             mCurrentNum = null;
             return true;

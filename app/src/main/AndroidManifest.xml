@@ -3,7 +3,7 @@
     package="com.jack.myexperience">
     <!--android:theme="@android:style/Theme.Translucent"-->
     <!---->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -32,8 +32,10 @@
         <activity android:name=".ui.activity.ThreadPoolActivity" />
         <activity android:name=".ui.activity.MenuActivity" />
         <activity android:name=".ui.activity.ImageCompressActivity" />
-        <activity android:name=".ui.activity.SnackbarActivity"/>
-        <activity android:name=".ui.activity.AnimationActivity"/>
+        <activity android:name=".ui.activity.SnackbarActivity" />
+        <activity android:name=".ui.activity.AnimationActivity" />
+        <activity android:name=".ui.activity.HomeActivity" />
+        <activity android:name=".ui.activity.ProxyActivity" />
     </application>
 
 </manifest>

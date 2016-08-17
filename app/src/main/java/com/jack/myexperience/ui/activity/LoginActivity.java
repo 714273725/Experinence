@@ -6,13 +6,17 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.fastjson.JSON;
+import com.jack.myexperience.MyApplication;
 import com.jack.myexperience.R;
 import com.jack.myexperience.base.BaseActivity;
+import com.jack.myexperience.statics.Statices;
 
 import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -43,9 +47,51 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (view.getId()) {
             case R.id.btn_login:
                 //login();
-                forward(MainActivity.class);
-                finish();
+                /*forward(MainActivity.class);
+                finish();*/
+                loginIM();
                 break;
+        }
+    }
+
+    private void loginIM() {
+        showProgressDialog("登陆中。。");
+        if (getApplicationInfo().packageName.equals(MyApplication.getCurProcessName(getApplicationContext()))) {
+            /**
+             * IMKit SDK调用第二步,建立与服务器的连接
+             */
+            RongIM.connect(Statices.GEGE_TOKEN, new RongIMClient.ConnectCallback() {
+                /**
+                 * Token 错误，在线上环境下主要是因为 Token 已经过期，您需要向 App Server 重新请求一个新的 Token
+                 */
+                @Override
+                public void onTokenIncorrect() {
+
+                }
+
+                /**
+                 * 连接融云成功
+                 * @param userid 当前 token
+                 */
+                @Override
+                public void onSuccess(String userid) {
+                    dismissProgressDialog();
+                    forward(HomeActivity.class);
+                    finish();
+                    /*Log.d("LoginActivity", "--onSuccess" + userid);
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();*/
+                }
+
+                /**
+                 * 连接融云失败
+                 * @param errorCode 错误码，可到官网 查看错误码对应的注释
+                 */
+                @Override
+                public void onError(RongIMClient.ErrorCode errorCode) {
+                   /* Log.d("LoginActivity", "--onError" + errorCode);*/
+                }
+            });
         }
     }
 
