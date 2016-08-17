@@ -1,3 +1,3 @@
-include ':app',':CircularFloatingActionMenu'
-include ':gglibrary'
+include ':app', ':CircularFloatingActionMenu', ':photodraweeview'
+include ':gglibrary','IMKit'
 include ':library_zhy_CircleMenu'
