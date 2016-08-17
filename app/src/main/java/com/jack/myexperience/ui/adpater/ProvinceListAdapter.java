@@ -12,23 +12,23 @@ import com.jack.myexperience.bean.CityBean;
 /**
  * Created by Administrator on 2016/2/25 0025.
  */
-public class ProvinceListAdapter extends BaseRecyclerViewAdapter<CityBean.Province> {
+public class ProvinceListAdapter extends BaseRecyclerViewAdapter<CityBean.Province,ProvinceListAdapter.GetProvinceViewHolder> {
     public void setListener(View.OnClickListener listener) {
         this.listener = listener;
     }
     View.OnClickListener listener;
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GetProvinceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View convertView= MyApplication.getInflater().inflate(R.layout.item_get_province_adapter,parent,false);
         GetProvinceViewHolder holder=new GetProvinceViewHolder(convertView);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(GetProvinceViewHolder holder, int position) {
         holder.itemView.setTag(R.id.first,-1);
         holder.itemView.setTag(R.id.second,position);
-        ((GetProvinceViewHolder)holder).mProvinceName.setText(getTargetPositionData(position).getProvince());
+        holder.mProvinceName.setText(getTargetPositionData(position).getProvince());
         if(listener!=null){
             holder.itemView.setOnClickListener(listener);
         }

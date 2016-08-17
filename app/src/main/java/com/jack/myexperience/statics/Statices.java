@@ -15,4 +15,11 @@ public class Statices {
     public final static String IM_KEY = "uwd1c0sxdd211";
     public final static String GEGE_TOKEN = "RrR92dUP1uO4YCo5sGhyxl03EsFSU9K/7Mihb7PujVb7XnFTC+f2Mm+cqgctrQwlugWcWtJa+ZZprS8CMPHSSzRW0/QyfATZ";
     public final static String BAOBAO_TOKEN = "MiGhRpbJEdxpJBcsFcIzGoKgStgtia1eBp2FieEEH/pV+0C0Ym9E0dRFyUgMEGp6PAtwFsDOibF4YNFy3T5IrZez7+Hsw1eU";
+    public final static String BAOBAO_ID = "1693112041";
+    public final static String GEGE_ID = "714276725";
+    public static String CURRENT_ID = "714276725";
+
+    public static void setCurrentId(String id) {
+        CURRENT_ID = id;
+    }
 }

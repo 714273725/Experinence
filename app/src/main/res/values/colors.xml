@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
     <color name="fenhong">#CCCCFF</color>
+    <color name="base_bg">#f4f4f5</color>
+    <color name="home_dock_background">#252525</color>
 </resources>

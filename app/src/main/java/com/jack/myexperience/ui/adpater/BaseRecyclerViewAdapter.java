@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/2/23 0023.
  */
-public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter {
+public abstract class BaseRecyclerViewAdapter<T,K extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<K> {
     List data;
     public void setData(List data) {
         this.data = data;

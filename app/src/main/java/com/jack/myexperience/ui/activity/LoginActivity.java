@@ -56,11 +56,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private void loginIM() {
         showProgressDialog("登陆中。。");
+        String name = mUserName.getText().toString().trim();
+        Statices.setCurrentId(name);
         if (getApplicationInfo().packageName.equals(MyApplication.getCurProcessName(getApplicationContext()))) {
             /**
              * IMKit SDK调用第二步,建立与服务器的连接
              */
-            RongIM.connect(Statices.GEGE_TOKEN, new RongIMClient.ConnectCallback() {
+            RongIM.connect(Statices.GEGE_ID.equals(name) ? Statices.GEGE_TOKEN : Statices.BAOBAO_TOKEN, new RongIMClient.ConnectCallback() {
                 /**
                  * Token 错误，在线上环境下主要是因为 Token 已经过期，您需要向 App Server 重新请求一个新的 Token
                  */

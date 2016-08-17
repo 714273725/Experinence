@@ -77,5 +77,5 @@ dependencies {
     compile 'com.github.traex.rippleeffect:library:1.2.3'
     compile project(':IMKit')
     compile project(':photodraweeview')
-
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.5@aar'
 }

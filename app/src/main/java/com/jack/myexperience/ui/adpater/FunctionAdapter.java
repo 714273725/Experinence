@@ -13,7 +13,7 @@ import com.jack.myexperience.R;
 /**
  * Created by Administrator on 2016/2/23 0023.
  */
-public class FunctionAdapter extends BaseRecyclerViewAdapter<String> {
+public class FunctionAdapter extends BaseRecyclerViewAdapter<String,FunctionAdapter.FunctionViewHolder> {
     public void setListener(View.OnClickListener listener) {
         this.listener = listener;
     }
@@ -24,19 +24,21 @@ public class FunctionAdapter extends BaseRecyclerViewAdapter<String> {
 
     Context context;
     static View.OnClickListener listener;
+
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FunctionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View convertView= LayoutInflater.from(context).inflate(R.layout.item_function_adapter,parent,false);
         FunctionViewHolder holder=new FunctionViewHolder(convertView);
         return holder;
     }
+
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((FunctionViewHolder)holder).mFunctionName.setText(getTargetPositionData(position));
-        ((FunctionViewHolder)holder).mFunctionName.setTag(position);
+    public void onBindViewHolder(FunctionViewHolder holder, int position) {
+        holder.mFunctionName.setText(getTargetPositionData(position));
+        holder.mFunctionName.setTag(position);
         holder.itemView.setTag(position);
         if(listener!=null){
-            ((FunctionViewHolder) holder).view.setOnClickListener(listener);
+            holder.view.setOnClickListener(listener);
         }
     }
     public class FunctionViewHolder extends RecyclerView.ViewHolder{
