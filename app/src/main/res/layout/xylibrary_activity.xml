@@ -6,5 +6,5 @@
     <com.xycode.xylibrary.xRefresher.XRefresher
         android:id="@+id/xrefresher"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.xycode.xylibrary.xRefresher.XRefresher>
+        android:layout_height="wrap_content"></com.xycode.xylibrary.xRefresher.XRefresher>
 </LinearLayout>

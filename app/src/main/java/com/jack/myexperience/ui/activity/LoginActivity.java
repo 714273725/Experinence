@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.jack.myexperience.MyApplication;
 import com.jack.myexperience.R;
 import com.jack.myexperience.base.BaseActivity;
+import com.jack.myexperience.bean.User;
 import com.jack.myexperience.statics.Statices;
 
 import java.io.IOException;
@@ -46,23 +47,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                //login();
-                /*forward(MainActivity.class);
-                finish();*/
-                loginIM();
+                login();
                 break;
         }
     }
 
-    private void loginIM() {
-        showProgressDialog("登陆中。。");
-        String name = mUserName.getText().toString().trim();
-        Statices.setCurrentId(name);
+    private void loginIM(String token) {
         if (getApplicationInfo().packageName.equals(MyApplication.getCurProcessName(getApplicationContext()))) {
             /**
              * IMKit SDK调用第二步,建立与服务器的连接
              */
-            RongIM.connect(Statices.GEGE_ID.equals(name) ? Statices.GEGE_TOKEN : Statices.BAOBAO_TOKEN, new RongIMClient.ConnectCallback() {
+            RongIM.connect(token, new RongIMClient.ConnectCallback() {
                 /**
                  * Token 错误，在线上环境下主要是因为 Token 已经过期，您需要向 App Server 重新请求一个新的 Token
                  */
@@ -77,12 +72,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                  */
                 @Override
                 public void onSuccess(String userid) {
-                    dismissProgressDialog();
-                    forward(HomeActivity.class);
-                    finish();
-                    /*Log.d("LoginActivity", "--onSuccess" + userid);
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();*/
+
                 }
 
                 /**
@@ -98,6 +88,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void login() {
+        showProgressDialog("登陆中。");
         final String name = mUserName.getText().toString().trim();
         final String password = mUserPassword.getText().toString().trim();
         if (name.isEmpty()) {
@@ -117,24 +108,30 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         .add("user_password", password)
                         .build();
                 Request request = new Request.Builder()
-                        .url("http://1547540x6k.iok.la/wed/LoginServlet")
+                        .url(Statices.LOGIN)
                         .post(formBody)
                         .build();
                 try {
                     Response response = client.newCall(request).execute();
                     if (response.code() == 200) {
+                        dismissProgressDialog();
                         int result = JSON.parseObject(response.body().string()).getInteger("result");
                         switch (result) {
                             case 1:
+                                User user = JSON.parseObject(response.body().string(), User.class);
+                                loginIM(user.getUser_token());
                                 forward(MainActivity.class);
                                 finish();
                                 break;
                             default:
                                 break;
                         }
+                    } else {
+                        dismissProgressDialog();
                     }
 
                 } catch (IOException e) {
+                    dismissProgressDialog();
                     e.printStackTrace();
                 }
             }

@@ -29,9 +29,14 @@ android {
         exclude 'META-INF/LICENSE.txt'
     }
     compileOptions {
+        encoding "UTF-8"
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    source = android.sourceSets.main.java.srcDirs
 }
 
 buildscript {
@@ -47,7 +52,6 @@ buildscript {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:design:24+'
     compile 'com.android.support:appcompat-v7:24+'
     compile 'com.android.support:recyclerview-v7:24+'
@@ -78,4 +82,5 @@ dependencies {
     compile project(':IMKit')
     compile project(':photodraweeview')
     compile 'cn.bingoogolapple:bga-refreshlayout:1.1.5@aar'
+    compile project(':xylibrary')
 }

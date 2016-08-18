@@ -6,24 +6,24 @@
         android:id="@+id/ll"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="@dimen/dim_40">
         <Button
             android:id="@+id/btn_vertical"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dim_0"
+            android:layout_height="@dimen/dim_40"
             android:text="垂直"/>
         <Button
             android:id="@+id/btn_horizontal"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dim_0"
+            android:layout_height="@dimen/dim_40"
             android:text="水平"/>
         <Button
             android:id="@+id/btn_grid"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dim_0"
+            android:layout_height="@dimen/dim_40"
             android:text="九宫"/>
     </LinearLayout>
     <android.support.v7.widget.RecyclerView

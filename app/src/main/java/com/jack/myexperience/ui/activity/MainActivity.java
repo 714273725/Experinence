@@ -100,6 +100,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case 10:
                 forward(AnimationActivity.class);
                 break;
+            case 11:
+                break;
             default:
                 break;
         }
