@@ -40,8 +40,6 @@ public class ProxyActivity extends BaseActivity {
             File dexOutputDir = this.getDir("dex", 0);
             loader = new DexClassLoader(file.getAbsolutePath(), dexOutputDir.getAbsolutePath(), null, getClassLoader());
             PackageInfo plocalObject = getPackageManager().getPackageArchiveInfo(file.getAbsolutePath(), PackageManager.GET_ACTIVITIES);
-
-
             if ((plocalObject.activities != null) && (plocalObject.activities.length > 0)) {
                 String activityname = plocalObject.activities[0].name;
                 clazz = loader.loadClass(activityname);
