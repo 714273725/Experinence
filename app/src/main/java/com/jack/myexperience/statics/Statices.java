@@ -25,7 +25,7 @@ public class Statices {
 
     private static final String HOST = "http://1547540x6k.iok.la/wed/";
     public static final String REGISTER = HOST + "app/user/register";
-    public static final String LOGIN = HOST + "user/login";
+    public static final String LOGIN = HOST + "app/user/login";
 
     public static void setCurrentId(String id) {
         CURRENT_ID = id;
